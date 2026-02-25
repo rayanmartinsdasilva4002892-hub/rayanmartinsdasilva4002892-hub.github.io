@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cardápio Digital - Lanchonete Exemplo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #e63946;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        h2 {
+            color: #e63946;
+            border-bottom: 2px solid #e63946;
+            padding-bottom: 5px;
+        }
+
+        .produto {
+            background-color: white;
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .produto img {
+            width: 100%;
+            max-width: 250px;
+            border-radius: 8px;
+        }
+
+        .produto h3 {
+            margin: 10px 0 5px;
+        }
+
+        .preco {
+            font-weight: bold;
+            color: #2a9d8f;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background-color: #1ebe5d;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #333;
+            color: white;
+            margin-top: 30px;
+        }
+
+        .mapa {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .mapa a {
+            color: #e63946;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Lanchonete Sabor Local</h1>
+    <p>O melhor lanche da cidade!</p>
+</header>
+
+<div class="container">
+
+    <h2>🍔 Hambúrgueres</h2>
+
+    <div class="produto">
+        <img src="https://via.placeholder.com/250" alt="X-Burguer">
+        <h3>X-Burguer</h3>
+        <p>Pão, carne, queijo e salada.</p>
+        <p class="preco">R$ 18,00</p>
+        <a class="btn" href="https://wa.me/5599999999999?text=Olá,%20quero%20pedir%20um%20X-Burguer%20(R$18,00)">Pedir no WhatsApp</a>
+    </div>
+
+    <div class="produto">
+        <img src="https://via.placeholder.com/250" alt="X-Tudo">
+        <h3>X-Tudo</h3>
+        <p>Pão, carne, presunto, queijo, ovo e salada.</p>
+        <p class="preco">R$ 25,00</p>
+        <a class="btn" href="https://wa.me/5599999999999?text=Olá,%20quero%20pedir%20um%20X-Tudo%20(R$25,00)">Pedir no WhatsApp</a>
+    </div>
+
+    <h2>🥤 Bebidas</h2>
+
+    <div class="produto">
+        <img src="https://via.placeholder.com/250" alt="Refrigerante">
+        <h3>Refrigerante Lata</h3>
+        <p>Coca-Cola, Guaraná ou Fanta.</p>
+        <p class="preco">R$ 6,00</p>
+        <a class="btn" href="https://wa.me/5599999999999?text=Olá,%20quero%20pedir%20um%20Refrigerante%20(R$6,00)">Pedir no WhatsApp</a>
+    </div>
+
+    <div class="mapa">
+        <p>📍 Estamos localizados em Jacinto - MG</p>
+        <a href="https://maps.google.com" target="_blank">Ver no Google Maps</a>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 - Sistema de Cardápio Digital desenvolvido por Rayan Martins da Silva
+</footer>
+
+</body>
+</html>
