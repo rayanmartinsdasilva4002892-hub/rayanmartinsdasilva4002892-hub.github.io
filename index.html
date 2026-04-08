@@ -1,141 +1,129 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projeto Iron Fitness</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iron Fitness - Sua Melhor Versão</title>
+    <style>
+        /* CONFIGURAÇÕES GERAIS */
+        body { font-family: 'Arial Black', sans-serif; margin: 0; padding: 0; background-color: #111; color: #fff; scroll-behavior: smooth; }
+        h1, h2, h3 { text-transform: uppercase; letter-spacing: 2px; }
+        
+        /* CABEÇALHO */
+        header { background: rgba(0,0,0,0.9); padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 90%; top: 0; z-index: 1000; border-bottom: 2px solid #f1c40f; }
+        .logo { color: #f1c40f; font-size: 1.8rem; }
+        nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: bold; font-size: 0.9rem; }
+        nav a:hover { color: #f1c40f; }
 
-<style>
-body { font-family: 'Arial Black', sans-serif; margin: 0; padding: 0; background-color: #111; color: #fff; scroll-behavior: smooth; }
-h1, h2, h3 { text-transform: uppercase; letter-spacing: 2px; }
+        /* BANNER PRINCIPAL */
+        .hero { height: 100vh; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1350&q=80'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        .hero h1 { font-size: 4rem; margin: 0; text-shadow: 2px 2px 10px #000; }
+        .hero p { font-size: 1.2rem; color: #f1c40f; }
+        .btn-cta { background: #f1c40f; color: #000; padding: 15px 30px; border-radius: 5px; text-decoration: none; font-weight: bold; margin-top: 20px; transition: 0.3s; }
+        .btn-cta:hover { background: #fff; transform: scale(1.05); }
 
-header { background: rgba(0,0,0,0.9); padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 2px solid #f1c40f; }
-.logo { color: #f1c40f; font-size: 1.8rem; }
-nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: bold; }
-nav a:hover { color: #f1c40f; }
+        /* SEÇÃO MODALIDADES */
+        .section { padding: 80px 5%; text-align: center; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 40px; }
+        .card { background: #222; padding: 20px; border-radius: 10px; border-bottom: 4px solid #f1c40f; transition: 0.3s; }
+        .card:hover { background: #333; }
+        .card img { width: 100%; border-radius: 5px; height: 150px; object-fit: cover; }
 
-.hero { height: 100vh; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48'); background-size: cover; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-.hero h1 { font-size: 3.5rem; }
-.hero p { color: #f1c40f; }
+        /* TABELA DE PLANOS */
+        .plans-container { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 40px; }
+        .plan-box { background: #fff; color: #000; padding: 40px; border-radius: 15px; width: 280px; position: relative; }
+        .plan-box.featured { border: 4px solid #f1c40f; transform: scale(1.1); }
+        .plan-box h3 { color: #f1c40f; font-size: 2rem; margin: 10px 0; }
+        .plan-price { font-size: 2.5rem; font-weight: bold; }
+        .plan-box ul { list-style: none; padding: 0; margin: 20px 0; line-height: 2; }
 
-.section { padding: 100px 5%; text-align: center; }
+        /* BOTÃO WHATSAPP */
+        .whatsapp { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 9999; display: flex; align-items: center; gap: 10px; }
 
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        footer { background: #000; padding: 40px; text-align: center; border-top: 1px solid #333; color: #666; }
 
-.card { background: #222; padding: 20px; border-radius: 10px; border-bottom: 4px solid #f1c40f; }
-
-.card:hover { background: #333; }
-
-.btn { background: #f1c40f; color: #000; padding: 10px 20px; text-decoration: none; font-weight: bold; border-radius: 5px; }
-
-footer { background: #000; padding: 30px; text-align: center; color: #666; }
-
-@media(max-width:768px){
-    nav { display:none; }
-}
-</style>
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            nav { display: none; }
+        }
+    </style>
 </head>
-
 <body>
 
 <header>
-<div class="logo">IRON<strong>FITNESS</strong></div>
-<nav>
-<a href="#home">HOME</a>
-<a href="#projeto">PROJETO</a>
-<a href="#problema">PROBLEMA</a>
-<a href="#solucao">SOLUÇÃO</a>
-<a href="#tecnologias">TECNOLOGIAS</a>
-</nav>
+    <div class="logo">IRON<strong>FITNESS</strong></div>
+    <nav>
+        <a href="#home">HOME</a>
+        <a href="#aulas">AULAS</a>
+        <a href="#planos">PLANOS</a>
+        <a href="#contato">CONTATO</a>
+    </nav>
 </header>
 
 <section id="home" class="hero">
-<h1>PROJETO IRON FITNESS</h1>
-<p>Website moderno para academias com integração ao WhatsApp</p>
-<a href="#projeto" class="btn">VER PROJETO</a>
+    <h1>SUPERE SEUS LIMITES</h1>
+    <p>A academia mais completa da região com suporte 24h.</p>
+    <a href="#planos" class="btn-cta">COMEÇAR AGORA</a>
 </section>
 
-<section id="projeto" class="section">
-<h2>OBJETIVO DO PROJETO</h2>
-<p>Criar um site moderno e responsivo para academias, facilitando a divulgação de serviços e o contato com clientes através do WhatsApp.</p>
+<section id="aulas" class="section">
+    <h2>Nossas Modalidades</h2>
+    <div class="grid">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=300" alt="Musculação">
+            <h3>Musculação</h3>
+            <p>Equipamentos de última geração para todos os níveis.</p>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=300" alt="Crossfit">
+            <h3>Cross Training</h3>
+            <p>Treinos de alta intensidade para queimar calorias.</p>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1510894347713-fc3ed6fdf539?w=300" alt="Lutas">
+            <h3>Muay Thai</h3>
+            <p>Aprenda defesa pessoal e ganhe condicionamento.</p>
+        </div>
+    </div>
 </section>
 
-<section id="problema" class="section" style="background:#1a1a1a;">
-<h2>PROBLEMA IDENTIFICADO</h2>
-<div class="grid">
-<div class="card">
-<h3>Falta de Site</h3>
-<p>Muitas academias não possuem presença digital profissional.</p>
-</div>
-
-<div class="card">
-<h3>Atendimento Lento</h3>
-<p>Demora na resposta aos clientes via redes sociais.</p>
-</div>
-
-<div class="card">
-<h3>Baixa Conversão</h3>
-<p>Dificuldade em transformar visitantes em alunos.</p>
-</div>
-</div>
+<section id="planos" class="section" style="background-color: #1a1a1a;">
+    <h2>Escolha seu Plano</h2>
+    <div class="plans-container">
+        <div class="plan-box">
+            <h4>BASIC</h4>
+            <div class="plan-price">R$ 89,90</div>
+            <ul>
+                <li>Musculação Horário Livre</li>
+                <li>Área de Cardio</li>
+                <li>Sem taxa de adesão</li>
+            </ul>
+            <a href="#" class="btn-cta" style="display:block">ASSINAR</a>
+        </div>
+        <div class="plan-box featured">
+            <span style="background:#f1c40f; padding:5px 10px; border-radius:5px; font-size:0.7rem">MAIS POPULAR</span>
+            <h4>PREMIUM</h4>
+            <div class="plan-price">R$ 129,90</div>
+            <ul>
+                <li>Todas as Aulas (Boxe, Yoga)</li>
+                <li>Acesso a todas as unidades</li>
+                <li>Avaliação Biométrica</li>
+                <li>Levar 1 convidado/mês</li>
+            </ul>
+            <a href="#" class="btn-cta" style="display:block">ASSINAR</a>
+        </div>
+    </div>
 </section>
 
-<section id="solucao" class="section">
-<h2>SOLUÇÃO PROPOSTA</h2>
-<div class="grid">
-
-<div class="card">
-<h3>Site Moderno</h3>
-<p>Design profissional e atrativo.</p>
-</div>
-
-<div class="card">
-<h3>Planos Organizados</h3>
-<p>Apresentação clara dos serviços.</p>
-</div>
-
-<div class="card">
-<h3>WhatsApp Integrado</h3>
-<p>Contato rápido com um clique.</p>
-</div>
-
-</div>
-</section>
-
-<section id="tecnologias" class="section" style="background:#1a1a1a;">
-<h2>TECNOLOGIAS UTILIZADAS</h2>
-
-<div class="grid">
-<div class="card">
-<h3>HTML</h3>
-<p>Estrutura do site</p>
-</div>
-
-<div class="card">
-<h3>CSS</h3>
-<p>Estilização e layout</p>
-</div>
-
-<div class="card">
-<h3>JavaScript</h3>
-<p>Interatividade</p>
-</div>
-</div>
-</section>
-
-<section class="section">
-<h2>RESULTADOS ESPERADOS</h2>
-<p>Mais visibilidade, aumento de alunos e profissionalização da academia.</p>
-</section>
-
-<a href="https://wa.me/5500000000000?text=Quero%20saber%20mais%20sobre%20o%20projeto" 
-style="position:fixed;bottom:20px;right:20px;background:#25d366;color:#fff;padding:15px;border-radius:50px;text-decoration:none;">
-WhatsApp
+<a href="https://wa.me/5500000000000" class="whatsapp" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="20" alt="Zap">
+    MATRICULE-SE JÁ
 </a>
 
 <footer>
-<p>Projeto Iron Fitness © 2026</p>
+    <p>IRON FITNESS © 2026 - Rua da Força, 123, São Paulo.</p>
 </footer>
 
 </body>
 </html>
+
